@@ -18,7 +18,7 @@ others to join.
 
 ### To run the server
 
-`dotnet run`
+`dotnet run --no-hot-reload`
 
 ### To run the client
 
