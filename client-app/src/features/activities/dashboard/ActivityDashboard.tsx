@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import ActivityFilter from "./ActivityFilter";
 
-export default observer(function ActivityDashbroad() {
+export default observer(function ActivityDashboard() {
   const { activityStore } = useStore();
   const { loadActivities, activityRegistry } = activityStore;
   useEffect(() => {
@@ -14,7 +14,7 @@ export default observer(function ActivityDashbroad() {
   }, [loadActivities, activityRegistry.size]);
 
   if (activityStore.loadingInitial)
-    return <LoadingComponent content="Loading..." />;
+    return <LoadingComponent content="Loading activities..." />;
   return (
     <Grid>
       <Grid.Column width="10">
