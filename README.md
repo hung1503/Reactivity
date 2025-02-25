@@ -20,6 +20,8 @@ others to join.
 
 `dotnet run --no-hot-reload`
 
+`dotnet run watch`
+
 ### To run the client
 
 `npm run dev`
