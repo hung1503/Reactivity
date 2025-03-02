@@ -20,7 +20,7 @@ others to join.
 
 `dotnet run --no-hot-reload`
 
-`dotnet run watch`
+`dotnet watch run`
 
 ### To run the client
 
