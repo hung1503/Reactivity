@@ -1,7 +1,6 @@
 import { Segment, List, Label, Item, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react-lite";
-import { Profile } from "../../../app/models/profile";
 import { Activity } from "../../../app/models/activity";
 
 interface Props {
@@ -44,7 +43,9 @@ export default observer(function ActivityDetailedSidebar({
                     {attendee.displayName}
                   </Link>
                 </Item.Header>
-                <Item.Extra style={{ color: "orange" }}>Following</Item.Extra>
+                {attendee.following && (
+                  <Item.Extra style={{ color: "orange" }}>Following</Item.Extra>
+                )}
               </Item.Content>
             </Item>
           ))}
