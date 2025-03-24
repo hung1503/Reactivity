@@ -3,6 +3,7 @@ using Application.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -10,8 +11,11 @@ namespace Application.Activitities
 {
     public class List
     {
-        public class Query : IRequest<Result<List<ActivityDto>>> {}
-        public class Handler : IRequestHandler<Query, Result<List<ActivityDto>>>
+        public class Query : IRequest<Result<PageList<ActivityDto>>> 
+        {
+            public PagingParams Params { get; set; }
+        }
+        public class Handler : IRequestHandler<Query, Result<PageList<ActivityDto>>>
         {
             private readonly DataContext _context;
             private readonly IMapper _mapper;
@@ -23,13 +27,16 @@ namespace Application.Activitities
                 _context = context;
                 _mapper = mapper;
             }
-            public async Task<Result<List<ActivityDto>>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<Result<PageList<ActivityDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var activities = await _context.Activities
+                var query = _context.Activities
+                    .OrderBy(d => d.Date)
                     .ProjectTo<ActivityDto>(_mapper.ConfigurationProvider, new { currentUsername = _userAccesssor.GetUsername()})
-                    .ToListAsync();
+                    .AsQueryable();
 
-                return Result<List<ActivityDto>>.Success(activities);
+                return Result<PageList<ActivityDto>>.Success(
+                    await PageList<ActivityDto>.CreateAsync(query, request.Params.PageNumber, request.Params.PageSize)
+                );
             }
         }
     }
