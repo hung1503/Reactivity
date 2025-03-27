@@ -80,13 +80,7 @@ export default observer(function ActivityForm() {
               placeholder="Category"
               name="category"
             />
-            <MyDateInput
-              placeholderText="Date"
-              name="date"
-              showTimeSelect
-              timeCaption="time"
-              dateFormat="MMMM d, yyyy h:mm aa"
-            />
+            <MyDateInput placeholder="Date" name="date" />
             <Header content="Location Details" sub color="teal" />
             <MyTextInput placeholder="City" name="city" />
             <MyTextInput placeholder="Venue" name="venue" />
