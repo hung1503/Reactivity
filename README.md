@@ -29,3 +29,10 @@ others to join.
 ### To run the client
 
 `npm run dev`
+
+### Picture Demos
+
+![Login](./photos/reactivities-login.png)
+![Newsfeed](./photos/reactivities-nf.png)
+![Profile](./photos/reactivities-profile.png)
+![Activity](./photos/reactivities-activity.png)
