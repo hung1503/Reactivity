@@ -2,7 +2,7 @@
 
 This project is currently undergoing updates and improvements. During this time, some features may not work as expected, and the documentation may not reflect the latest changes.
 
-[See the application](react-fullstack-project.azurewebsites.net)
+[See the application](https://react-fullstack-project.azurewebsites.net/)
 
 Test account: bob@test.com - Pa$$w0rd
 
