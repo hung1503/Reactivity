@@ -1,9 +1,8 @@
 # ⚠️ Project Status: Updating ⚠️
 
 This project is currently undergoing updates and improvements. During this time, some features may not work as expected, and the documentation may not reflect the latest changes.
-The database is not working so you will not able to log in or register.
 
-[See the application](https://reactivities-hkg3adcbgchpfdc5.swedencentral-01.azurewebsites.net/)
+[See the application](react-fullstack-project.azurewebsites.net)
 Test account: bob@test.com - Pa$$w0rd
 
 # Reactivities
